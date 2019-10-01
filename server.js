@@ -23,6 +23,7 @@ app.use(cors());
 app.post("/signin",(req,res) => {signin.handleSignin(req,res,sqllite,bcrypt)})
 app.post("/register",(req,res) => {register.handleRegister(req,res,sqllite,bcrypt)})	
 app.get("/profile/:id",(req,res) => {profile.handleProfileGet(req,res,sqllite)})
+app.get("/",(req,res) => {res.send("it's working!")})
 app.put("/image",(req,res) => {image.handleImagePut(req,res,sqllite)})
 app.post("/imageurl",(req,res) => {image.handleApiCall(req,res)})
 
