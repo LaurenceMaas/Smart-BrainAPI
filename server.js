@@ -27,7 +27,7 @@ app.put("/image",(req,res) => {image.handleImagePut(req,res,sqllite)})
 app.post("/imageurl",(req,res) => {image.handleApiCall(req,res)})
 
 app.listen(process.env.PORT || 3000,(req,res)=>{
-		console.log("listening on port" + PORT)
+		console.log("listening on port " + PORT)
 });
 
 
