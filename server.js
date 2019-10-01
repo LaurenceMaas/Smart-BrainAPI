@@ -10,10 +10,10 @@ const sqllite = require('knex')({
 });
 
 const app = express();
-const register = require("C:/Users/Laurence/Desktop/Web exercises/Web exercises/React/smartbrain-api/contollers/register")
-const signin = require("C:/Users/Laurence/Desktop/Web exercises/Web exercises/React/smartbrain-api/contollers/signin")
-const profile = require("C:/Users/Laurence/Desktop/Web exercises/Web exercises/React/smartbrain-api/contollers/profile")
-const image = require("C:/Users/Laurence/Desktop/Web exercises/Web exercises/React/smartbrain-api/contollers/image")
+const register = require("./contollers/register")
+const signin = require("./contollers/signin")
+const profile = require("./contollers/profile")
+const image = require("./contollers/image")
 
 const PORT = process.env.PORT
 
@@ -26,7 +26,7 @@ app.get("/profile/:id",(req,res) => {profile.handleProfileGet(req,res,sqllite)})
 app.put("/image",(req,res) => {image.handleImagePut(req,res,sqllite)})
 app.post("/imageurl",(req,res) => {image.handleApiCall(req,res)})
 
-app.listen(3000,(req,res)=>{
+app.listen(process.env.PORT || 3000,(req,res)=>{
 		console.log("listening on port" + PORT)
 });
 
